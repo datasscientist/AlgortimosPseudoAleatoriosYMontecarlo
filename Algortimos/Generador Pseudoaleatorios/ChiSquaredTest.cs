@@ -30,6 +30,7 @@ public class ChiSquaredTest
         
         // Create bins for intervals
         List<double> bins = new List<double>();
+
         for (int i = 0; i <= intervals; i++)
         {
             bins.Add(i / (double)intervals);

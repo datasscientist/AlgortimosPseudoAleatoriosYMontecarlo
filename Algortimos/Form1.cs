@@ -12,17 +12,15 @@ namespace Algortimos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AlgoritmosPseudoAleatorios algs = new AlgoritmosPseudoAleatorios();
-
             PruebaChiCuadrada chi = new PruebaChiCuadrada();
 
             DateTime tiempoActual = DateTime.Now;
             int semilla = tiempoActual.Millisecond;
-            int cantidad = 10000;
+            int cantidad = Convert.ToInt32(textBox4.Text);
             int cantIntervalos = 10;
 
             // Método de Cuadrado Medio
-            List<double> numerosGenerados = algs.CongruencialMultiplicativo(1681, 9973, semilla, cantidad);
+            List<double> numerosGenerados = chi.CongruencialMultiplicativo(Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text), semilla, cantidad);
 
             double chi_score = chi.PruebaDeChi(numerosGenerados, cantIntervalos);
 
@@ -64,12 +62,25 @@ namespace Algortimos
                 }
             }
 
+        }
 
-
-
-
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

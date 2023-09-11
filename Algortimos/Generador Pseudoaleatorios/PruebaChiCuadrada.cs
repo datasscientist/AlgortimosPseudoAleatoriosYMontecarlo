@@ -10,6 +10,22 @@ public class PruebaChiCuadrada
     public List<double> chis = new List<double>();
     public double frecuenciaEsperada;
 
+    public List<double> CongruencialMultiplicativo(int a, int m, int semilla, int cantidad)
+    {
+        List<double> numerosGenerados = new List<double>();
+
+        for (int i = 0; i < cantidad; i++)
+        {
+            // Siguiente número pseudoaleatorio
+            semilla = (a * semilla) % m;
+            double numeroGenerado = (double)semilla / m;
+
+            numerosGenerados.Add(numeroGenerado);
+        }
+
+        return numerosGenerados;
+    }
+
     public List<int> ingresarValoresEnRango(List<double> numerosGenerados, List<double> rangos)
     {
         List<int> frecuencias = new List<int>(new int[rangos.Count - 1]);

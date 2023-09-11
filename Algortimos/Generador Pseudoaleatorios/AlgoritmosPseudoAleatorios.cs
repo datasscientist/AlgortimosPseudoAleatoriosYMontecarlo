@@ -8,7 +8,7 @@ namespace Algortimos.Generador_Pseudoaleatorios
 {
     public class AlgoritmosPseudoAleatorios
     {
-
+        //Algoritmos no congruenciales
         public List<int> CuadradoMedio(int semilla, int cantidad)
         {
             List<int> numerosGenerados = new List<int>();
@@ -61,6 +61,8 @@ namespace Algortimos.Generador_Pseudoaleatorios
             return numerosGenerados;
         }
 
+
+        // Algoritmos Congruenciales
         public List<double> CongruencialLineal(int a, int c, int m, int semilla, int cantidad)
         {
             List<double> numerosGenerados = new List<double>();

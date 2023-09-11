@@ -4,6 +4,12 @@ using System.Linq;
 
 public class PruebaChiCuadrada
 {
+    //Listas necesarias
+    public List<double> rangos = new List<double>();
+    public List<int> frecuenciasReales = new List<int>();
+    public List<double> chis = new List<double>();
+    public double frecuenciaEsperada;
+
     public List<int> ingresarValoresEnRango(List<double> numerosGenerados, List<double> rangos)
     {
         List<int> frecuencias = new List<int>(new int[rangos.Count - 1]);
@@ -27,12 +33,9 @@ public class PruebaChiCuadrada
     {
         // Variables necesarias
         int n = numerosGenerados.Count;
-        double frecuenciaEsperada = n / (double)cantIntervalos;
+        frecuenciaEsperada = n / (double)cantIntervalos;
         double chiSquared = 0;
-        //Listas necesarias
-        List<double> rangos = new List<double>();
-        List<int> frecuenciasReales = new List<int>();
-        List<double> chis = new List<double>();
+
 
         // Paso 1: Creamos los intervalos en donde los datos serán ingresados
         for (int i = 0; i <= cantIntervalos; i++)
@@ -42,10 +45,7 @@ public class PruebaChiCuadrada
 
         // Paso 2: Metemos los datos que generamos dentro de su respectivo rango
         frecuenciasReales = ingresarValoresEnRango(numerosGenerados, rangos);
-       
-
-        
-
+      
         // Paso 3: Calculamos el valor de chi para cada uno de los rangos y el total
         for (int i = 0; i < cantIntervalos; i++)
         {
@@ -60,5 +60,21 @@ public class PruebaChiCuadrada
         return chiSquared;
     }
 
+    public List<double> getRangos()
+    {
+        return rangos;
+    }
+    public List<double> getChis()
+    {
+        return chis;
+    }
+    public List<int> getfrecuenciasReales()
+    {
+        return frecuenciasReales;
+    }
 
+    public double getFrecuenciaEsperada()
+    {
+        return frecuenciaEsperada;
+    }
 }

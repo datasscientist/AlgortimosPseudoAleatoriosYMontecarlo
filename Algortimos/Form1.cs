@@ -13,15 +13,20 @@ namespace Algortimos
         {
             AlgoritmosPseudoAleatorios algs = new AlgoritmosPseudoAleatorios();
 
+            PruebaChiCuadrada chi = new PruebaChiCuadrada();
+
             DateTime tiempoActual = DateTime.Now;
             int semilla = tiempoActual.Millisecond;
-            int cantidad = 1;
+            int cantidad = 100;
 
 
             // Método de Cuadrado Medio
-            List<int> numerosGenerados = algs.CuadradoMedio(semilla, cantidad);
+            List<double> numerosGenerados = algs.CongruencialMultiplicativo(16807, 2147483647, semilla, cantidad);
 
-            textBox1.Text = numerosGenerados[0].ToString();
+            double chi_score = chi.PruebaDeChi(numerosGenerados, 10);
+
+            textBox1.Text = chi_score.ToString();
+
 
 
         }

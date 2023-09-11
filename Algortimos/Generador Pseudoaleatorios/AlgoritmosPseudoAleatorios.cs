@@ -9,9 +9,9 @@ namespace Algortimos.Generador_Pseudoaleatorios
     public class AlgoritmosPseudoAleatorios
     {
         //Algoritmos no congruenciales
-        public List<int> CuadradoMedio(int semilla, int cantidad)
+        public List<double> CuadradoMedio(int semilla, int cantidad)
         {
-            List<int> numerosGenerados = new List<int>();
+            List<double> numerosGenerados = new List<double>();
 
             for (int i = 0; i < cantidad; i++)
             {
